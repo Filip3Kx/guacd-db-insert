@@ -18,9 +18,10 @@ conn = psycopg2.connect(
 
 
 #RDP
-# ssh_insert_conn = ""
-# ssh_insert_conn_perm = ""
-# ssh_insert_conn_param = ""
+# rdp_insert_conn = "INSERT INTO guacamole_connection (connection_id, connection_name, parent_id, protocol, max_connections, max_connections_per_user, connection_weight, failover_only, proxy_port, proxy_hostname, proxy_encryption_method) VALUES ("+conn_id+", '" + guacamole_platforms[setup_id]['Name'] + "-"+guacamole_platforms[setup_id]['Controller IP']+"', NULL, 'rdp', NULL, NULL, NULL, 'f', NULL, NULL, NULL);"
+# rdp_insert_conn_perm = "INSERT INTO guacamole_connection_permission (entity_id, connection_id, permission) VALUES (1, "+conn_id+", 'READ'), (1, "+conn_id+", 'UPDATE'), (1, "+conn_id+", 'DELETE'), (1, "+conn_id+", 'ADMINISTER');"
+# rdp_insert_conn_param = "INSERT INTO guacamole_connection_parameter (connection_id, parameter_name, parameter_value) VALUES ("+conn_id+", 'hostname', '" + guacamole_platforms[setup_id]['Controller IP'] + "'), ("+conn_id+", 'password', 'test'), ("+conn_id+", 'console-audio', 'true'), ("+conn_id+", 'port', '3389'), ("+conn_id+", 'domain', 'example.org.com'), ("+conn_id+", 'normalize-clipboard', 'windows'), ("+conn_id+", 'security', 'nla'), ("+conn_id+", 'ignore-cert', 'true'), ("+conn_id+", 'resize-method', 'display-update'), ("+conn_id+", 'username', 'test');"
+      
 
 cursor = conn.cursor()
 for i in range(len(arr)):
