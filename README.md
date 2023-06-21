@@ -23,3 +23,7 @@ INSERT INTO guacamole_connection (connection_id, connection_name, parent_id, pro
 INSERT INTO guacamole_connection_permission (entity_id, connection_id, permission) VALUES (1, "+conn_id+", 'READ'), (1, "+conn_id+", 'UPDATE'), (1, "+conn_id+", 'DELETE'), (1, "+conn_id+", 'ADMINISTER');
 INSERT INTO guacamole_connection_parameter (connection_id, parameter_name, parameter_value) VALUES ("+conn_id+", 'enable-sftp', 'true'), ("+conn_id+", 'hostname', '" + guacamole_platforms[setup_id]['Dut IP'] + "'), ("+conn_id+", 'password', 'test'), ("+conn_id+", 'port', '22'), ("+conn_id+", 'username', 'test');
 ```
+
+## DISCLAIMER
+
+**Remember to change the connection id sequence to the last id added +1**
